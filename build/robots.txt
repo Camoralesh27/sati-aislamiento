@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+
+Allow: /
+
+Sitemap: https://patronatobomberoscuauhtemoc.org/sitemap.xml

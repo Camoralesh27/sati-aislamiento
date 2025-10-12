@@ -1,0 +1,61 @@
+// FUENTE
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    $heading-font: "Poppins", serif;
+    $body-font:  "Roboto", serif; 
+
+//FONT SIZE
+    $h1-font-size: 5.6rem;
+    $h2-font-size: 4.4rem;  
+    $h3-font-size: 2.8rem;
+    $h4-font-size: 2.4rem;
+
+    $normal-font-size: 1.8rem;
+    $small-font-size: 1.4rem;
+
+    $h1-font-size-mobile: 3.2rem;
+    $h2-font-size-mobile: 2.8rem;
+    $h3-font-size-mobile: 2rem;
+    $h4-font-size-mobile: 1.8rem;
+    $normal-font-size-mobile: 1.8rem;
+
+// MEDIA QUERIES
+    $phone: 576px;
+    /* $tablet: 768px; */
+    $tablet: 1000px;
+    $desktop: 1200px;
+    $desktop-lg: 1400px; 
+
+ // COLORS 
+    $yellow-1: #FFCB4D;
+    $yellow-2: #FFB400;
+    $yellow-3: #D99900;
+    $yellow-form: rgb(255, 248, 232);
+    $blue-1: #3B9CD7;
+    $blue-2: #116BA2;
+    $blue-3: #1F2937;
+    $red-1: #D32F2F;
+    $red-2: #BF1C2E;
+    $red-3: #95101F;
+    $gray-1: #F2F2F2;
+    $gray-2: #DBDBDB;
+    $gray-3: #BEBEBE;
+    $gray-4: #767676;
+    $gray-5: #4D4D4D;
+    $shadow: rgba(31, 31, 31, 0.75);
+    $background: #252525;
+    $blue-background: rgba(1, 40, 64, 0.70);
+    $black: #2A2A2A;
+    $white: #FFFFFF;
+    $selected: #aaaaaa;
+
+    /* $white-2: #F3F3F3; */
+
+    $white-transparent: rgba(243, 243, 243, 0.7);
+
+// BOX-SHADOW
+    $box-shadow: 5px 3px 7px 0px rgba(0, 0, 0, 0.30);
+
+// BORDER-RADIUS
+    $border-radius: 2rem;
+

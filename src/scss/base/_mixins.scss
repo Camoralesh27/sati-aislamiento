@@ -1,0 +1,106 @@
+@use 'variables' as v;
+@use 'sass:color';
+
+@mixin phone {
+    @media screen and (width <= v.$phone){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (v.$phone < width <= v.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and ( width > v.$tablet){
+        @content;
+    }
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+
+@mixin boton($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1rem 2rem;
+    color: $colorTexto;
+    /* margin-top: 2rem;
+    font-size: 2.2rem; */
+    border-radius: 2rem;
+    box-shadow: v.$box-shadow;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    /* text-transform: uppercase; */
+    transition: all 200ms;
+
+    @include tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: color.adjust($bgColor, $lightness: 7%);
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+
+@mixin boton2($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1rem 4rem;
+    color: $colorTexto;
+    /* margin-top: 2rem;
+    font-size: 2.2rem; */
+    border-radius: 2rem;
+    border: solid 6px v.$yellow-2;
+    box-shadow: v.$box-shadow;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 200ms;
+
+    @include tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: color.adjust($bgColor, $lightness: 7%);
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+
+
+@mixin boton3($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: .5rem 0;
+    color: $colorTexto;
+    margin-bottom: 2rem;
+    border-radius: 3.5rem;
+    border: solid 4px v.$blue-2;
+    box-shadow: v.$box-shadow;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 200ms;
+    display: block;
+    width: 100%;
+
+    @include tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: color.adjust($bgColor, $lightness: 7%);
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}

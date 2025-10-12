@@ -1,0 +1,134 @@
+@use 'variables' as v;
+@use 'base/mixins' as m;
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: v.$body-font;
+    font-size: v.$normal-font-size;
+    line-height: 1.6;
+    background-color: v.$white;
+    color: v.$black;
+}
+
+h1, h2, h3, h4 {
+    color: v.$black;
+    font-weight: 600;
+    font-family: v.$heading-font;
+    
+    //reset again
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: v.$h1-font-size;
+}
+h2 {
+    font-size: v.$h2-font-size;
+    line-height: 4.5rem;
+}
+h3 {
+    font-size: v.$h3-font-size;
+}
+h4 {
+    font-size: v.$h4-font-size;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: v.$black;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+}
+
+::selection {
+    background: v.$selected;
+    color: v.$white;
+  }
+  
+  ::-moz-selection {
+    background: v.$selected;
+    color: v.$white;
+  }
+
+
+/*==== REUSABLE CSS CLASSES ====*/
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+
+    @include m.phone {
+        width: 90%;
+    }
+}
+
+[class$="__line"] {
+    width: 10rem;
+    height: .5rem;
+    border-radius: 1rem;
+    background-color: v.$yellow-2;
+    margin: 1.5rem auto;
+    
+}
+
+[class$="__heading"] {
+    font-size: v.$h2-font-size;
+    color: v.$black;
+    text-transform: uppercase;
+    text-align: center;
+
+    /* @include m.phone {
+        font-size: v.$h2-font-size-mobile;
+    } */
+}
+
+[class$="__subtitle"] {
+    font-size: v.$normal-font-size;
+    color: v.$gray-4;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 3rem;
+    max-width: 85%;
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+[class$="--red"] {
+    color: v.$red-1;
+    font-weight: 500;
+}
+
+/* ---- LEGACY ------- */
+
+[class$="--blue"] {
+    color: v.$blue-1;
+}
+
+[class$="--yellow"] {
+    color: v.$yellow-2;
+}
