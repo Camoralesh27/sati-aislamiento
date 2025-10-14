@@ -1,0 +1,51 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.nosotros {
+    background-color: v.$gray-1;
+    padding: 6rem 0;
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        width: 80%;
+        margin: 0 auto;
+        padding: 4rem;
+        align-items: center;
+        
+
+        @include m.tablet {
+            grid-template-columns: 1fr;
+        }
+
+        @include m.phone {
+            grid-template-columns: 1fr;
+            padding: 4rem 1rem;
+            width: 90%;
+        }
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__heading {
+        text-align: start;
+
+        @include m.phone {
+            text-align: center;
+            font-size: 4rem;
+        }
+    }
+
+    &__line {
+        margin-left: 0;
+    }
+
+    
+
+    
+}

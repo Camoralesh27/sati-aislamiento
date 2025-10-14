@@ -114,7 +114,7 @@
         }
 
         &-img {
-            width: 6rem;
+            width: 25rem;
         }
 
         &-line {
@@ -253,11 +253,11 @@
             width: 12rem;
 
             @include m.phone {
-                width: 6rem;
+                width: 20rem;
             }
 
             @include m.tablet {
-                width: 6rem;
+                width: 20rem;
             }
         }
 

@@ -1,0 +1,261 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contact {
+  /* ——— Previene scroll horizontal por cualquier hijo ——— */
+  overflow-x: hidden;
+
+  color: v.$white;
+
+  &__container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 6rem 2rem 8rem;
+
+    @include m.tablet { padding: 4rem 1.6rem 6rem; }
+    @include m.phone  { padding: 3.2rem 1.6rem 5rem; }
+  }
+
+  &__heading {
+    font-family: v.$heading-font;
+    font-size: v.$h2-font-size;
+    text-align: center;
+    margin: 0 0 1.2rem;
+    color: v.$red-1;
+
+    @include m.tablet { font-size: v.$h2-font-size-mobile; }
+    @include m.phone  { font-size: v.$h2-font-size-mobile; }
+  }
+
+  &__subtitle {
+    font-size: v.$normal-font-size;
+    text-align: center;
+    color: v.$gray-4;
+    max-width: 62ch; /* más controlado que 80% */
+    margin: 0 auto 4rem;
+
+    @include m.tablet { font-size: v.$normal-font-size-mobile; max-width: 90%; }
+    @include m.phone  { font-size: v.$normal-font-size-mobile; max-width: 92%; }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1.2fr .8fr;
+
+    /* Permite que las columnas encojan y evita que empujen el ancho */
+    > * { min-width: 0; }
+
+    @include m.tablet { grid-template-columns: 1fr; }
+    @include m.phone  { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* ========== FORM & INFO base (anti overflow + paddings) ========== */
+  &__form,
+  &__info {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: v.$border-radius;
+    padding: 2.4rem;
+    box-shadow: v.$box-shadow;
+
+    @include m.tablet {
+      max-width: 760px;
+      margin-inline: auto;
+      padding: 2rem;
+    }
+    @include m.phone  {
+      max-width: 100%;
+      padding: 1.6rem;
+    }
+  }
+
+  /* ========== FORM ========== */
+  &__form {
+    background: v.$yellow-form;
+    color: v.$black;
+  }
+
+  &__form-title {
+    font-family: v.$heading-font;
+    font-size: v.$h3-font-size;
+    margin: 0 0 1.6rem;
+    color: v.$blue-3;
+
+    @include m.tablet { font-size: v.$h3-font-size-mobile; }
+    @include m.phone  { font-size: v.$h3-font-size-mobile; }
+  }
+
+  &__field { display: grid; gap: .8rem; margin-bottom: 1.6rem; }
+
+  &__label {
+    font-size: v.$small-font-size;
+    font-weight: 600;
+    color: v.$blue-3;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    font-size: v.$normal-font-size;
+    color: v.$black;
+    background: v.$white;
+    border: 1px solid v.$gray-2;
+    border-radius: 1rem;
+    padding: 1.2rem 1.4rem;
+    transition: box-shadow .2s ease, border-color .2s ease;
+
+    &::placeholder { color: v.$gray-3; }
+
+    &:focus {
+      outline: none;
+      border-color: v.$blue-2;
+      box-shadow: 0 0 0 4px rgba(v.$blue-2, .15);
+    }
+
+    @include m.tablet { font-size: v.$normal-font-size-mobile; }
+    @include m.phone  { font-size: v.$normal-font-size-mobile; }
+  }
+
+  &__textarea { resize: vertical; min-height: 14rem; }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: v.$normal-font-size;
+    padding: 1.2rem 1.8rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, v.$yellow-1, v.$yellow-2);
+    color: v.$black;
+    box-shadow: 0 6px 14px rgba(0,0,0,.15);
+    transition: transform .12s ease, box-shadow .12s ease, filter .2s ease;
+
+    &:hover { filter: brightness(1.02); transform: translateY(-1px); }
+    &:active { transform: translateY(0); box-shadow: 0 3px 8px rgba(0,0,0,.18); }
+
+    @include m.phone { width: 100%; justify-content: center; font-size: v.$normal-font-size-mobile; }
+  }
+
+  &__button-icon { display: inline-block; line-height: 1; transform: translateY(1px); }
+
+  /* ========== INFO ========== */
+  &__info {
+    background: linear-gradient(0deg, v.$blue-background, v.$blue-background), v.$background;
+    border: 1px solid rgba(255,255,255,.08);
+    color: v.$white;
+  }
+
+  &__info-title {
+    font-family: v.$heading-font;
+    font-size: v.$h3-font-size;
+    margin: 0 0 1.6rem;
+    color: v.$white;
+
+    @include m.tablet { font-size: v.$h3-font-size-mobile; }
+    @include m.phone  { font-size: v.$h3-font-size-mobile; }
+  }
+
+  &__list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 1.6rem; }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 3.6rem 1fr;
+    gap: 1.2rem;
+    align-items: start;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.06);
+
+    @include m.phone { grid-template-columns: 3.2rem 1fr; }
+  }
+
+  &__icon {
+    width: 3.6rem; height: 3.6rem;
+    display: grid; place-items: center;
+    font-size: 1.8rem;
+    border-radius: 50%;
+    background: rgba(v.$blue-2, .18);
+
+    @include m.phone { width: 3.2rem; height: 3.2rem; font-size: 1.6rem; }
+  }
+
+  &__item-head { font-weight: 700; font-size: v.$small-font-size; opacity: .9; }
+  &__item-text { display: block; font-size: v.$normal-font-size; opacity: .9; }
+
+  /* Evita desbordes por cadenas largas (emails/direcciones) */
+  &__item-text, &__link { overflow-wrap: anywhere; word-break: break-word; }
+
+  &__item-link {
+    color: v.$white;
+  }
+
+  &__link {
+    color: v.$yellow-1;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(v.$yellow-1, .6);
+    transition: opacity .2s ease;
+    &:hover { opacity: .85; }
+  }
+
+  /* Socials */
+  &__social-label { display: block; margin-bottom: 1rem; font-weight: 700; }
+  &__social-row   { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+  &__social-btn {
+    width: 3.6rem; height: 3.6rem;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: v.$white; color: v.$black;
+    font-weight: 800; text-decoration: none; box-shadow: v.$box-shadow;
+
+    @include m.phone { width: 3.2rem; height: 3.2rem; }
+  }
+}
+
+/* ------------- FORM VALIDATION ------------- */
+
+/* ---------- Mensajes de error (solo texto, sin bordes rojos) ---------- */
+  .contact__error{
+    display: none;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #d93025;
+    margin-top: 4px;
+    width: max-content;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .contact__error.is-visible{
+    display: inline-block;
+  }
+
+  /* ---------- Botón deshabilitado ---------- */
+  .contact__button[disabled]{
+    opacity: .6;
+    cursor: not-allowed;
+  }
+
+  /* ---------- Aviso "toast" inferior ---------- */
+  .contact__flash{
+    position: fixed;
+    left: 50%;
+    bottom: 10rem;
+    transform: translateX(-50%);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    background: #0e8f3b;
+    color: #fff;
+    z-index: 9999;
+    text-align: center;
+
+    &--400 {
+      font-weight: 400;
+    }
+  }

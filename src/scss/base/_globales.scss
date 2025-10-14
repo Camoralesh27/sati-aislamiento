@@ -97,9 +97,9 @@ fieldset {
 }
 
 [class$="__heading"] {
-    font-size: v.$h2-font-size;
+    font-size: 4.4rem;
     color: v.$black;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-align: center;
 
     /* @include m.phone {
