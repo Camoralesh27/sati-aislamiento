@@ -1,0 +1,113 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.servicios {
+  background-color: v.$blue-2;
+  padding: 4rem 0;
+  color: v.$white;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+
+    @include m.phone {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ===== Imagen (izquierda) ===== */
+  &__contenedor-img {
+    /* centra vertical en el grid y evita que se estire raro */
+    align-self: center;
+
+    /* no dejes que la imagen sea más ancha que el contenedor */
+    max-width: 720px;
+    width: 100%;
+    margin-inline: auto;
+
+    /* borde y sombra suaves para destacar sobre el fondo azul */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+
+    /* en móvil ocupamos todo el ancho sin sombras tan fuertes */
+    @include m.phone {
+      max-width: 100%;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+    }
+  }
+
+  /* picture como bloque y control del ratio */
+  &__picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* ratio cómodo para fotos de tubería; ajusta si tu foto cambia */
+    aspect-ratio: 3 / 2;
+  }
+
+  /* imagen responsiva, recorte correcto y sin espacios blancos */
+  &__img {
+    display: block;       /* quita espacios extra */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* rellena el contenedor recortando */
+    transform: scale(1);  /* base para animación leve en hover */
+    transition: transform .35s ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      .servicios__contenedor-img:hover & {
+        transform: scale(1.015); /* micro-zoom elegante */
+      }
+    }
+  }
+
+  /* ===== Texto (derecha) ===== */
+  &__contenedor-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-self: center; /* alinea verticalmente con la imagen */
+  }
+
+  &__heading {
+    color: v.$white;
+    text-align: left;
+    margin: 0;
+  }
+
+  &__text {
+    max-width: 60ch;
+    line-height: 1.6;
+    color: rgba(#fff, .92);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    i {
+      font-size: 1.6rem;
+      color: v.$yellow-1; /* toque de contraste sobre azul */
+      flex-shrink: 0;
+    }
+
+    .servicios__item-heading {
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+}
+
+/* Accesibilidad / motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
