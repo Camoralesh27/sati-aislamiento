@@ -5,4 +5,4 @@ Disallow: /cgi-bin/
 
 Allow: /
 
-Sitemap: https://patronatobomberoscuauhtemoc.org/sitemap.xml
+Sitemap: https://satiaislamientos.com//sitemap.xml
