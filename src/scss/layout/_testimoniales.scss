@@ -10,6 +10,10 @@
     gap: 2rem;
     background-color: v.$white;
 
+    &__heading {
+        margin: 0 auto;
+    }
+
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

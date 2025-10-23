@@ -8,6 +8,10 @@
     flex-direction: column;
     gap: 3rem;
 
+    &__heading {
+        text-align: center;
+    }
+
     &__subtitle {
         color: v.$gray-4;
     }

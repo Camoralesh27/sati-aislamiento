@@ -17,14 +17,9 @@
   }
 
   &__heading {
-    font-family: v.$heading-font;
-    font-size: v.$h2-font-size;
     text-align: center;
     margin: 0 0 1.2rem;
-    color: v.$red-1;
-
-    @include m.tablet { font-size: v.$h2-font-size-mobile; }
-    @include m.phone  { font-size: v.$h2-font-size-mobile; }
+    color: v.$black;
   }
 
   &__subtitle {
@@ -34,8 +29,6 @@
     max-width: 62ch; /* más controlado que 80% */
     margin: 0 auto 4rem;
 
-    @include m.tablet { font-size: v.$normal-font-size-mobile; max-width: 90%; }
-    @include m.phone  { font-size: v.$normal-font-size-mobile; max-width: 92%; }
   }
 
   &__grid {
@@ -86,6 +79,10 @@
     @include m.phone  { font-size: v.$h3-font-size-mobile; }
   }
 
+  &__form-subtitle {
+    margin-bottom: 1rem;
+  }
+
   &__field { display: grid; gap: .8rem; margin-bottom: 1.6rem; }
 
   &__label {
@@ -112,9 +109,6 @@
       border-color: v.$blue-2;
       box-shadow: 0 0 0 4px rgba(v.$blue-2, .15);
     }
-
-    @include m.tablet { font-size: v.$normal-font-size-mobile; }
-    @include m.phone  { font-size: v.$normal-font-size-mobile; }
   }
 
   &__textarea { resize: vertical; min-height: 14rem; }
@@ -137,10 +131,16 @@
     &:hover { filter: brightness(1.02); transform: translateY(-1px); }
     &:active { transform: translateY(0); box-shadow: 0 3px 8px rgba(0,0,0,.18); }
 
-    @include m.phone { width: 100%; justify-content: center; font-size: v.$normal-font-size-mobile; }
+    @include m.phone { 
+      width: 100%; 
+      justify-content: center; 
+    }
   }
 
-  &__button-icon { display: inline-block; line-height: 1; transform: translateY(1px); }
+  &__button-icon { 
+    display: inline-block; 
+    line-height: 1; 
+    transform: translateY(1px); }
 
   /* ========== INFO ========== */
   &__info {
@@ -155,8 +155,6 @@
     margin: 0 0 1.6rem;
     color: v.$white;
 
-    @include m.tablet { font-size: v.$h3-font-size-mobile; }
-    @include m.phone  { font-size: v.$h3-font-size-mobile; }
   }
 
   &__list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 1.6rem; }
