@@ -69,6 +69,13 @@
     &__logo {
         display: block;
         width: 7rem;   
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
     }
 
     &__title {
@@ -77,6 +84,13 @@
 
     &__subtitle {
         font-size: 1.4rem;
+        
+    }
+
+    &__text {
+        color: v.$white;
+        text-align: left;
+        margin: 0
     }
 
 
