@@ -24,7 +24,7 @@
         max-width: 100vw;
         padding: 1.5rem 3rem;
         align-items: center;
-
+        
         @include m.phone {
             flex-direction: column;
         }
