@@ -1,0 +1,124 @@
+<section class="contact" id="contacto">
+            <div class="contact__container">
+                <h2 class="contact__heading" data-section="contact" data-value="title">Contáctanos</h2>
+                <p class="contact__subtitle">
+                Estamos aquí para servirte. Contáctanos para cualquier consulta.
+                </p>
+
+                <div class="contact__grid">
+
+                    <!-- Left: Form -->
+                    <form class="contact__form" action="https://api.web3forms.com/submit" method="POST">
+                        
+                        <input type="hidden" name="access_key" value="3a04577b-17ac-436d-bb9f-fb8008f1e7e7">
+
+                        <input type="hidden" name="subject" value="Nuevo mensaje del Sitio Web SATI aislamientos">
+                        
+                        <h3 class="contact__form-title">Solicita una cotización</h3>
+                        <p class="contact__form-subtitle">Listo para mejorar la eficiencia termal de tú compañia. Contáctanos para cualquier consulta y estimación.</p>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="name">Nombre Completo</label>
+                            <input
+                            class="contact__input"
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Tu nombre completo"
+                            maxlength="100"
+                            autocomplete="name"
+                            required
+                            >
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="email">Correo Electrónico</label>
+                            <input
+                            class="contact__input"
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Tu correo electrónico"
+                            maxlength="160"
+                            autocomplete="email"
+                            required
+                            >
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="message">Mensaje</label>
+                            <textarea
+                            class="contact__textarea"
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Tu mensaje"
+                            maxlength="2000"
+                            required
+                            ></textarea>
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <div class="h-captcha" data-captcha="true"></div>
+
+                        <button class="contact__button" type="submit" disabled>
+                            <span class="contact__button-icon" aria-hidden="true">✈</span>
+                            Enviar Mensaje
+                        </button>
+
+                        <!-- Aviso tipo "toast" -->
+                        <div class="contact__flash" id="contactFlash" aria-live="polite" hidden></div>
+                    </form>
+
+                    <!-- Right: Info -->
+                    <aside class="contact__info">
+                        <h3 class="contact__info-title">Información de Contacto</h3>
+
+                        <ul class="contact__list">
+                        <li class="contact__item">
+                            <span class="contact__icon" aria-hidden="true">☎</span>
+                            <div class="contact__item-content">
+                            <span class="contact__item-head">Teléfono</span>
+                            <span class="contact__item-text">Oficina: <a href="tel:+54 614 370 5477" class="contact__item-link">(614) 370 5477</a></span>
+                            </div>
+                        </li>
+
+                        <li class="contact__item">
+                            <span class="contact__icon" aria-hidden="true">📍</span>
+                            <div class="contact__item-content">
+                            <span class="contact__item-head">Dirección</span>
+                            <span class="contact__item-text"><a href="#" class="contact__item-link">
+                                Calle ------- #000000<br>
+                                Col. -------, Chihuahua<br>
+                                Chihuahua, México</a>
+                            </span>
+                            </div>
+                        </li>
+
+                        <li class="contact__item">
+                            <span class="contact__icon" aria-hidden="true">✉</span>
+                            <div class="contact__item-content">
+                            <span class="contact__item-head">Correo Electrónico</span>
+                            <a class="contact__link" href="mailto:contacto@satiaislamientos.com">
+                                contacto@satiaislamientos.com
+                            </a>
+                            </div>
+                        </li>
+                        </ul>
+
+                        <!-- <div class="contact__social">
+                        <span class="contact__social-label">Síguenos en Redes Sociales</span>
+                        <div class="contact__social-row">
+                            <a class="contact__social-btn contact__social-btn--fb" href="#" aria-label="Facebook">f</a>
+                            <a class="contact__social-btn contact__social-btn--ig" href="#" aria-label="Instagram">◎</a>
+                        </div>
+                        </div> -->
+                    </aside>
+                </div>
+            </div>
+        </section>

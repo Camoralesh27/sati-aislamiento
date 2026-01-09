@@ -19,6 +19,7 @@
     "glob": "^10.4.2",
     "gulp": "^5.0.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
     "sass": "^1.83.1",
