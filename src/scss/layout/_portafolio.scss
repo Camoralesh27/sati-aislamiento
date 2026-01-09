@@ -55,7 +55,11 @@
 
         &-picture {
             aspect-ratio: 3/2;
-            overflow: hidden
+            overflow: hidden;
+
+            /*! estra */
+            display: block;
+            width: 100%;
         }
 
 
@@ -65,7 +69,11 @@
             /* height: 100%; */
             display: block;
             object-fit: cover;
-            border-radius: 1.5rem 1.5rem 0 0;
+            /* border-radius: 1.5rem 1.5rem 0 0; */
+
+            /* ! extra */
+            height: 100%;
+            border-radius: 0;
         }
         
     }
